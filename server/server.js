@@ -12,7 +12,9 @@ require('./../middleware')(app);
 app.use('/api', api);
 
 app.get('/', function(req, res) {
-    res.send(`elastic beanstalk works!`);
+    console.log(path.join(`${__dirname}/pages/index`));
+    res.render(path.join(`${__dirname}/pages/index`));
+
 });
 
 module.exports = app;
