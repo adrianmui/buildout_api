@@ -18,6 +18,6 @@ module.exports = function(app) {
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
     app.use(cors());
-    app.use(override());
     app.use(errware);
+    app.use(override());
 };
