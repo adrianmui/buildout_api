@@ -7,7 +7,8 @@
 // setup config first before anything by requiring it
 const config = require('./config');
 const app = require('./server/server');
+const http = require('http');
 
-app.listen(config.port);
-
-console.log(`listening on http://localhost: ${config.port}`);
+http.createServer(app).listen(config.port, function() {
+    console.log(`listening on http://localhost: ${config.port}`);
+});
