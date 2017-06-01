@@ -5,10 +5,10 @@
 // automatically require the index.js on the root
 
 // setup config first before anything by requiring it
-const config = require('./config');
+const port = require('./config') || 3000;
 const app = require('./server/server');
 const http = require('http');
 
-http.createServer(app).listen(config.port, function() {
-    console.log(`listening on http://localhost: ${config.port}`);
+http.createServer(app).listen(port, function() {
+    console.log(`listening on http://localhost: ${port}`);
 });

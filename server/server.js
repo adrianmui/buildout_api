@@ -11,10 +11,9 @@ require('./../middleware')(app);
 // api
 app.use('/api', api);
 
+// home interface page
 app.get('/', function(req, res) {
-    console.log(path.join(`${__dirname}/pages/index`));
     res.render(path.join(`${__dirname}/pages/index`));
-
 });
 
 module.exports = app;
