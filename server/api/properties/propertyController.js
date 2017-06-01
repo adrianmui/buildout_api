@@ -19,19 +19,19 @@ stub.get = function(req, res, next) {
         if (error) {
             next(error);
         } else {
-            res.send(body);
+            res.send(JSON.parse(body).properties);
         }
     });
 };
 
 stub.getOne = function(req, res, next) {
-    let property = req.property;
+    let property = JSON.parse(req.property);
     if (!property.property) {
         let err = new Error(`item not found`);
         err.status = 500;
         next(err);
     }
-    res.send(property);
+    res.send(property.property);
 };
 
 module.exports = stub;

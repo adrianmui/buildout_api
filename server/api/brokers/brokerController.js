@@ -8,7 +8,7 @@ stub.get = function(req, res, next) {
         if (error) {
             next(error);
         } else {
-            res.send(body);
+            res.send(JSON.parse(body).brokers);
         }
     });
 };
